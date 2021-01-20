@@ -1,0 +1,117 @@
+<section class="product-category">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title text-center">
+            <h2>Product Category</h2>
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="category-box">
+            <a href="{{section.settings.clothes_sales_url}}">
+              <img src="{{section.settings.clothes_sales | img_url: '1920x'}}" alt="">
+              <div class="content">
+                <h3>{{section.settings.clothes_sales_header}}</h3>
+                <p>{{section.settings.clothes_sales_text}}</p>
+              </div>
+            </a>  
+          </div>
+          <div class="category-box">
+            <a href="{{section.settings.smart_casual_link}}">
+              <img src="{{section.settings.smart_casuals | img_url: '1920x'}}" alt="">
+              <div class="content">
+                <h3>{{section.settings.smart_casual_header}}</h3>
+                <p>{{section.settings.smart_casual_text}}</p>
+              </div>
+            </a>  
+          </div>
+        </div>
+
+        <div class="col-md-6">
+          <div class="category-box category-box-2">
+            <a href="{{section.settings.jewellery_link}}">
+              <img src="{{section.settings.jewellery | img_url: '1920x'}}" alt="">
+              <div class="content">
+                <h3>{{section.settings.jewellery_header}}</h3>
+                <p>{{section.settings.jewellery_text}}</p>
+              </div>
+            </a>  
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "Product Category Banners",
+    "settings": [
+        {
+            "type": "text",
+            "id": "clothes_sales_header",
+            "label": "Clothes Sales",
+            "default": "Cothes Sales"
+        },
+        {
+            "type": "text",
+            "id": "clothes_sales_text",
+            "label": "Clothes Sales Text"
+        },
+        {
+            "type": "url",
+            "id": "clothes_sales_url",
+            "label": "Sales Banner Url"
+        },
+        {
+            "type": "image_picker",
+            "id": "clothes_sales",
+            "label": "Clothes Sales"
+        },
+
+        {
+            "type": "text",
+            "id": "smart_casual_header",
+            "label": "Smart Casuals",
+            "default": "Smart Casuals"
+        },
+        {
+            "type": "text",
+            "id": "smart_casual_text",
+            "label": "Smart Casual Text"
+        },
+        {
+            "type": "url",
+            "id": "smart_casual_link",
+            "label": "Smart Casual Link"
+        },
+        {
+            "type": "image_picker",
+            "id": "smart_casuals",
+            "label": "Smart Casuals"
+        },
+
+        {
+            "type": "text",
+            "id": "jewellery_header",
+            "label": "Jewellery",
+            "default": "Jewellery"
+        },
+        {
+            "type": "text",
+            "id": "jewellery_text",
+            "label": "Jewellery Text"
+        },
+        {
+            "type": "url",
+            "id": "jewellery_link",
+            "label": "Jewellery Banner Link"
+        },
+        {
+            "type": "image_picker",
+            "id": "jewellery",
+            "label": "Jewellery"
+        }
+    ]
+}
+{% endschema %}

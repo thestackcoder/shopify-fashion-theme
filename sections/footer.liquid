@@ -1,0 +1,61 @@
+<footer class="footer section text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <ul class="social-media">
+            <li>
+              <a href="">
+                <i class="fa fa-facebook"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa fa-instagram"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa fa-twitter"></i>
+              </a>
+            </li>
+            <li>
+              <a href="">
+                <i class="fa fa-pinterest"></i>
+              </a>
+            </li>
+          </ul>
+          <ul class="footer-menu">
+            {% for link in section.blocks %}
+              <li>
+                <a href="{{link.settings.footer_link}}">{{link.settings.footer_text}}</a>
+              </li>
+            {% endfor %}
+          </ul>
+          <p class="copyright-text">Copyright &#9400; Fashion</p>
+        </div>
+      </div>
+    </div>
+</footer>
+
+{% schema %}
+{
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Footer Link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "footer_text",
+          "label": "Text"
+        },
+        {
+          "type": "url",
+          "id": "footer_link",
+          "label": "Link"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

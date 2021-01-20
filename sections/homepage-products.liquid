@@ -1,0 +1,67 @@
+<section class="products section bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="title text-center">
+            <h2>{{section.settings.trending_product_heading}}</h2>
+          </div>
+        </div>
+        {% assign collection = collections[section.settings.homepage_collection] %}
+        <div class="row">
+            {% for product in collection.products limit: section.settings.product_range %}                
+                <div class="col-md-4">
+                    <div class="product-item">
+                        <div class="product-thumb">
+                            {% if product.compare_at_price and product.compare_at_price != product.price %}
+                                <span class="bage">Sale</span>                    
+                            {% endif %}
+                            <img class="img-responsive" src="{{product.featured_image.src | img_url: '1920x'}}" alt="product-img">
+                            <div class="preview-meta">
+                            <ul>
+                                <li>
+                                <a href="#"><i class="fa fa-search"></i></a>
+                                </li>
+                                <li>
+                                <a href=""><i class="fa fa-shopping-cart"></i></a>
+                                </li>
+                            </ul>
+                            </div>
+                        </div>
+                        <div class="product-content">
+                            <h4><a href="product-single.html">{{product.title}}</a></h4>
+                            <p class="price">{{product.price}}</p>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+      </div>
+    </div>
+</section>
+
+{% schema %}
+{
+    "name": "HomePage Products",
+    "settings": [
+        {
+            "type": "text",
+            "id": "trending_product_heading",
+            "label": "Heading",
+            "default": "Trending Products"
+        },
+        {
+            "type": "range",
+            "id": "product_range",
+            "label": "Range of Products",
+            "min": 3,
+            "max": 9,
+            "default": 6
+        },
+        {
+            "type": "collection",
+            "id": "homepage_collection",
+            "label": "HomePage Collection"
+        }
+    ]
+}
+{% endschema %}
